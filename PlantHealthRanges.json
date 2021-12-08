@@ -1,0 +1,28 @@
+{"Plants" : 
+    {"Cactus": {
+        "Moisture":{"Min": 0, "Max": 40},
+        "Light": {},
+        "Temperature" :{}
+    },
+    "Lily": {
+        "Moisture":{"Min": 0, "Max": 40},
+        "Light": {},
+        "Temperature" :{}
+    },
+    "Sunflower": {
+        "Moisture":{"Min": 0, "Max": 40},
+        "Light": {},
+        "Temperature" :{}
+    },
+    "Dafodil": {
+        "Moisture":{"Min": 0, "Max": 40},
+        "Light": {},
+        "Temperature" :{}
+    },
+    "Cranberry": {
+        "Moisture":{"Min": 0, "Max": 40},
+        "Light": {},
+        "Temperature" :{}
+    }
+}
+}

@@ -4,6 +4,7 @@ import { AppBar, Button, Toolbar } from "@material-ui/core";
 import "./App.css";
 import Home from "./Home.js";
 import Change from "./Change.js";
+import logo from "./images/logo.png"
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,7 @@ export default class App extends Component {
       <Router>
         <AppBar className="AppBar">
           <Toolbar>
+            <img src = {logo} alt = "Stem2Stem" style = {{width: 250, height: 75}}/>
             <div style={{ marginLeft: "120px" }}>
               <Link to="/">
                 <Button className="AppBarButton">Home</Button>
