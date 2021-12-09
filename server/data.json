@@ -1,0 +1,9 @@
+{"Plants" : 
+    {"Cactus": {},
+    "Lily": {},
+    "Lobelia": {},
+    "Marigold": {},
+    "Cranberry": {}
+    },
+    "CurrentPlant" : "Cactus"
+}

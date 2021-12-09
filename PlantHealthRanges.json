@@ -2,27 +2,27 @@
     {"Cactus": {
         "Moisture":{"Min": 0, "Max": 40},
         "Light": {},
-        "Temperature" :{}
+        "Temperature" :{"Min": 18, "Max": 32}
     },
     "Lily": {
-        "Moisture":{"Min": 0, "Max": 40},
+        "Moisture":{"Min": 21, "Max": 60},
         "Light": {},
-        "Temperature" :{}
+        "Temperature" :{"Min": 0, "Max": 32}
     },
-    "Sunflower": {
-        "Moisture":{"Min": 0, "Max": 40},
+    "Lobelia": {
+        "Moisture":{"Min": 41, "Max": 80},
         "Light": {},
-        "Temperature" :{}
+        "Temperature" :{"Min": 17, "Max": 25}
     },
-    "Dafodil": {
-        "Moisture":{"Min": 0, "Max": 40},
+    "Marigold": {
+        "Moisture":{"Min": 21, "Max": 40},
         "Light": {},
-        "Temperature" :{}
+        "Temperature" :{"Min": 17, "Max": 21}
     },
     "Cranberry": {
-        "Moisture":{"Min": 0, "Max": 40},
+        "Moisture":{"Min": 61, "Max": 80},
         "Light": {},
-        "Temperature" :{}
+        "Temperature" :{"Min": 15, "Max": 26}
     }
 }
 }

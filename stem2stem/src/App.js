@@ -8,11 +8,11 @@ import logo from "./images/logo.png"
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: null };
+    this.state = { serverConnection: null };
   }
   componentDidMount() {
     this.callBackendAPI()
-      .then((res) => this.setState({ data: res.express }))
+      .then((res) => this.setState({ serverConnection: res.express }))
       .catch((err) => console.log(err));
   }
   callBackendAPI = async () => {
@@ -49,7 +49,8 @@ export default class App extends Component {
                 <Button className="AppBarButton">Change Plant</Button>
               </Link>
             </div>
-            <p>{this.state.data}</p>
+            {this.state.serverConnection ? 
+            <p style = {{marginLeft: "auto"}}>{this.state.serverConnection}</p> : <p style = {{marginLeft: "auto"}}>CANNOT CONNECT TO STEM2STEM SERVER</p>}
           </Toolbar>
         </AppBar>
 
