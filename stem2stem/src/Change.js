@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import "./Home.css";
 import { InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
-import axios from 'axios';
+import axios from "axios";
 
 export default class Change extends Component {
   constructor(props) {
     super(props);
-    this.state = {SelectedPlant: "None" , tempSelected: ""};
+    this.state = { SelectedPlant: "None", tempSelected: "" };
   }
   componentDidMount() {
     this.fetchServerPlant()
-      .then((res) => this.setState({ SelectedPlant: res.currentPlant , tempSelected: res.currentPlant}))
+      .then((res) =>
+        this.setState({
+          SelectedPlant: res.currentPlant,
+          tempSelected: res.currentPlant,
+        })
+      )
       .catch((err) => console.log(err));
   }
   fetchServerPlant = async () => {
@@ -23,25 +28,30 @@ export default class Change extends Component {
     return body;
   };
   handleChange = (e) => {
-    this.setState({tempSelected: e.target.value });
+    this.setState({ tempSelected: e.target.value });
   };
   handleClick = () => {
-    let json = JSON.stringify({body :this.state.tempSelected});
-    console.log(json)
+    let json = JSON.stringify({ plant: this.state.tempSelected });
+    console.log(json);
     axios
-    .post('http://localhost:8000/change_plant', json, {
-      headers: { "testing" : "IT WORKED","Content-Type":"application/json" 
-    }
-  },
-
-    )
-    .then(() => this.setState({SelectedPlant: this.state.tempSelected}))
-    .catch(err => {
-      console.error(err);
-    })
+      .post("http://localhost:8000/change_plant", json, {
+        headers: {
+          testing: "IT WORKED",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Methods": "GET,HEAD,OPTIONS,POST,PUT",
+          "Access-Control-Allow-Headers":
+            "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers",
+        },
+      })
+      .then(() => this.setState({ SelectedPlant: this.state.tempSelected }))
+      .catch((err) => {
+        console.error(err);
+      });
   };
   render() {
-    console.log(this.state.SelectedPlant)
+    console.log(this.state.SelectedPlant);
     return (
       <div className="PageText">
         <div className="PageHeader">
@@ -54,7 +64,13 @@ export default class Change extends Component {
           >
             Change Plants <br />
           </h2>
-          <div style={{ margin: "20px",width: "500px", display: "inline !important" }}>
+          <div
+            style={{
+              margin: "20px",
+              width: "500px",
+              display: "inline !important",
+            }}
+          >
             <div style={{ width: "200px" }}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Plant</InputLabel>
@@ -71,7 +87,9 @@ export default class Change extends Component {
                   <MenuItem value={"Marigold"}>Marigold</MenuItem>
                   <MenuItem value={"Cranberry"}>Cranberry</MenuItem>
                 </Select>
-                <button type="button" onClick={() => this.handleClick()}>Submit</button>
+                <button type="button" onClick={() => this.handleClick()}>
+                  Submit
+                </button>
               </FormControl>
             </div>
           </div>
