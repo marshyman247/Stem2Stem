@@ -1,14 +1,17 @@
-.StartButton {
+.submitButton {
   width: 200px;
   display: inline-flex !important;
-  height: 80px;
-  font-size: 40px !important;
+  margin-top: 20px !important;
+  margin: auto;
+  height: 24px;
+  font-size: 18px !important;
   font-weight: bold !important;
   background-color: #56c3e6 !important;
-  margin-top: 20px !important;
   border: 1px solid black !important;
   border-radius: 40px !important;
+  text-align: center !important;
+  display: inline-block !important;
 }
-.StartButton:hover {
+.submitButton:hover {
   background-color: #37a0c4 !important;
 }

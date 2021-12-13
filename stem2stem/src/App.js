@@ -4,7 +4,8 @@ import { AppBar, Button, Toolbar } from "@material-ui/core";
 import "./App.css";
 import Home from "./Home.js";
 import Change from "./Change.js";
-import logo from "./images/logo.png"
+import Track from "./Track";
+import logo from "./images/logo.png";
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -25,19 +26,15 @@ export default class App extends Component {
     return body;
   };
   render() {
-    function Track() {
-      return (
-        <div className="PageText">
-          <h1 style={{ fontWeight: "lighter" }}>Track A Plant</h1>
-        </div>
-      );
-    }
-
     return (
       <Router>
         <AppBar className="AppBar">
           <Toolbar>
-            <img src = {logo} alt = "Stem2Stem" style = {{width: 250, height: 75}}/>
+            <img
+              src={logo}
+              alt="Stem2Stem"
+              style={{ width: 250, height: 75 }}
+            />
             <div style={{ marginLeft: "120px" }}>
               <Link to="/">
                 <Button className="AppBarButton">Home</Button>
@@ -49,8 +46,15 @@ export default class App extends Component {
                 <Button className="AppBarButton">Change Plant</Button>
               </Link>
             </div>
-            {this.state.serverConnection ? 
-            <p style = {{marginLeft: "auto"}}>{this.state.serverConnection}</p> : <p style = {{marginLeft: "auto"}}>CANNOT CONNECT TO STEM2STEM SERVER</p>}
+            {this.state.serverConnection ? (
+              <p style={{ marginLeft: "auto" }}>
+                {this.state.serverConnection}
+              </p>
+            ) : (
+              <p style={{ marginLeft: "auto" }}>
+                CANNOT CONNECT TO STEM2STEM SERVER
+              </p>
+            )}
           </Toolbar>
         </AppBar>
 

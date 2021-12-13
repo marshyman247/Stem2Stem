@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./Change.css";
 import { InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
 import axios from "axios";
 
@@ -9,6 +9,7 @@ export default class Change extends Component {
     this.state = { SelectedPlant: "None", tempSelected: "" };
   }
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.fetchServerPlant()
       .then((res) =>
         this.setState({
@@ -36,7 +37,6 @@ export default class Change extends Component {
     axios
       .post("http://localhost:8000/change_plant", json, {
         headers: {
-          testing: "IT WORKED",
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Credentials": "true",
@@ -55,44 +55,33 @@ export default class Change extends Component {
     return (
       <div className="PageText">
         <div className="PageHeader">
-          <h2
-            style={{
-              display: "flex !important",
-              fontWeight: "lighter",
-              marginTop: "300px",
-            }}
+          <h1 style={{ fontWeight: "lighter" }}>Change Plants</h1>
+          <br />
+        </div>
+        <div style={{ width: "75%", margin: "auto" }}>
+          <FormControl style={{ width: "40%" }}>
+            <InputLabel id="demo-simple-select-label">Plant</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={this.state.tempSelected}
+              label="Plant"
+              onChange={(e) => this.handleChange(e)}
+            >
+              <MenuItem value={"Cactus"}>Cactus</MenuItem>
+              <MenuItem value={"Lily"}>Lily</MenuItem>
+              <MenuItem value={"Lobelia"}>Lobelia</MenuItem>
+              <MenuItem value={"Marigold"}>Marigold</MenuItem>
+              <MenuItem value={"Cranberry"}>Cranberry</MenuItem>
+            </Select>
+          </FormControl>
+          <button
+            className="submitButton"
+            type="button"
+            onClick={() => this.handleClick()}
           >
-            Change Plants <br />
-          </h2>
-          <div
-            style={{
-              margin: "20px",
-              width: "500px",
-              display: "inline !important",
-            }}
-          >
-            <div style={{ width: "200px" }}>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Plant</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={this.state.tempSelected}
-                  label="Plant"
-                  onChange={(e) => this.handleChange(e)}
-                >
-                  <MenuItem value={"Cactus"}>Cactus</MenuItem>
-                  <MenuItem value={"Lily"}>Lily</MenuItem>
-                  <MenuItem value={"Lobelia"}>Lobelia</MenuItem>
-                  <MenuItem value={"Marigold"}>Marigold</MenuItem>
-                  <MenuItem value={"Cranberry"}>Cranberry</MenuItem>
-                </Select>
-                <button type="button" onClick={() => this.handleClick()}>
-                  Submit
-                </button>
-              </FormControl>
-            </div>
-          </div>
+            Submit
+          </button>
         </div>
       </div>
     );
