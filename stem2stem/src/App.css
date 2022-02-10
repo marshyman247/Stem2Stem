@@ -25,7 +25,6 @@ a:active {
 }
 .PageHeader {
   background-size: calc(5606px / 5) calc(3836px / 5);
-  height: 100%;
   width: 100vw;
   overflow: auto;
   margin-top: -15px;
