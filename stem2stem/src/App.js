@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./Home.js";
 import Change from "./Change.js";
 import Track from "./Track";
+import Water from "./Water";
 import logo from "./images/logo.png";
 export default class App extends Component {
   constructor(props) {
@@ -45,6 +46,9 @@ export default class App extends Component {
               <Link to="/change">
                 <Button className="AppBarButton">Change Plant</Button>
               </Link>
+              <Link to="/water">
+                <Button className="AppBarButton">Water Plant</Button>
+              </Link>
             </div>
             {this.state.serverConnection ? (
               <p style={{ marginLeft: "auto" }}>
@@ -62,6 +66,7 @@ export default class App extends Component {
           <Routes>
             <Route path="/track" element={<Track />} />
             <Route path="/change" element={<Change />} />
+            <Route path="/water" element={<Water />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
