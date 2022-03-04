@@ -1,10 +1,96 @@
 {
   "Plants": {
-    "Cactus": {},
-    "Lily": {},
-    "Lobelia": {},
-    "Marigold": {},
-    "Cranberry": {}
+    "Cactus": [
+      {
+        "Moisture": 2,
+        "Temperature": 20,
+        "Light": 286,
+        "dateTime": 1645713705000
+      },
+      {
+        "Moisture": 5,
+        "Temperature": 21.6,
+        "Light": 280,
+        "dateTime": 1645713725000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 33.2,
+        "Light": 287,
+        "dateTime": 1645713745000
+      },
+      {
+        "Moisture": 11,
+        "Temperature": 20,
+        "Light": 400,
+        "dateTime": 1645713765000
+      }
+    ],
+    "Lily": [],
+    "Lobelia": [
+      {
+        "Moisture": 2,
+        "Temperature": 20,
+        "Light": 286,
+        "dateTime": 1645713705000
+      },
+      {
+        "Moisture": 5,
+        "Temperature": 21.6,
+        "Light": 280,
+        "dateTime": 1645713725000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 33.2,
+        "Light": 287,
+        "dateTime": 1645713745000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 17.6,
+        "Light": 300,
+        "dateTime": 1645713765000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 22.8,
+        "Light": 277,
+        "dateTime": 1645713785000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 16.4,
+        "Light": 288,
+        "dateTime": 1645713805000
+      },
+      {
+        "Moisture": 3,
+        "Temperature": 18,
+        "Light": 295,
+        "dateTime": 1645713825000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 27.2,
+        "Light": 309,
+        "dateTime": 1645713845000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 32.8,
+        "Light": 295,
+        "dateTime": 1645713865000
+      },
+      {
+        "Moisture": 3,
+        "Temperature": 33.2,
+        "Light": 309,
+        "dateTime": 1645713885000
+      }
+    ],
+    "Marigold": [],
+    "Cranberry": []
   },
   "CurrentPlant": "Lobelia"
 }

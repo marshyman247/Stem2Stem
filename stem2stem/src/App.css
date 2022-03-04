@@ -24,10 +24,8 @@ a:active {
   text-decoration: none !important;
 }
 .PageHeader {
-  background-size: calc(5606px / 5) calc(3836px / 5);
-  width: 100vw;
-  overflow: auto;
-  margin-top: -15px;
+  /* width: 100vw; */
+  margin-top: 15px;
 }
 
 :root {
@@ -44,6 +42,7 @@ a:active {
 }
 .PageText h1 {
   font-size: 40px;
+  margin-bottom: -10px;
 }
 .PageText h2 {
   font-size: 20px;

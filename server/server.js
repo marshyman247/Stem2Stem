@@ -16,7 +16,8 @@ let portPath;
 SerialPort.list().then(
   (ports) => {
     ports.forEach((port) => {
-      if (port.vendorId === "1A86") {
+      console.log(port.vendorId);
+      if (port.vendorId === "2341") {
         console.log("Port Set: " + port.path);
         portPath = port.path;
         createPort(portPath);
@@ -36,7 +37,25 @@ function readData(data) {
   str = data.toString(); //Convert to string
   str = str.replace(/(\r\n|\n|\r)/gm, ""); //remove '\r' from this String
   str = JSON.parse(str); //Then parse it
-  console.log("Data: ", str);
+  console.log("Incoming Data: ", str);
+  if (str.M != undefined && str.L != undefined && str.T != undefined) {
+    let data = {};
+    data.Moisture = str.M;
+    data.Temperature = str.T;
+    data.Light = str.L;
+    let date = new Date();
+    data.dateTime = Date.parse(date);
+    console.log("Outgoing Data: ", data);
+    //app.locals.json.Plants[app.locals.json.CurrentPlant].push(data);
+    fs.writeFile(
+      path.join(__dirname, "/data.json"),
+      JSON.stringify(app.locals.json, null, 2),
+      function writeJSON(err) {
+        if (err) return console.log(err);
+        console.log("writing to data.json");
+      }
+    );
+  }
 }
 function createPort(path) {
   COMPort = new SerialPort(
@@ -94,13 +113,22 @@ app.listen(appPort, () => console.log(`Listening on port ${appPort}`));
 app.get("/express_backend", (req, res) => {
   res.send({ express: "CONNECTED TO  STEM2STEM SERVER" });
 });
-// app.get("/current_plant_data_latest", (req, res) => {
-//   let data = app.locals.json.Plants[app.locals.json.CurrentPlant];
-//   console.log(data[data.length - 1]);
-//   // res.send({ currentPlantData: app.locals.json.Plants[app.locals.json.CurrentPlant]}
-// });
+app.get("/current_plant_data", (req, res) => {
+  let data = app.locals.json.Plants[app.locals.json.CurrentPlant];
+  console.log(data[data.length - 1]);
+  res.send({
+    currentPlantData: {
+      Name: app.locals.json.CurrentPlant,
+      Data: app.locals.json.Plants[app.locals.json.CurrentPlant],
+    },
+  });
+});
 app.get("/current_plant", (req, res) => {
   res.send({ currentPlant: app.locals.json.CurrentPlant });
+});
+app.get("/current_plant_ranges", (req, res) => {
+  let data = app.locals.PlantHealthRanges.Plants[app.locals.json.CurrentPlant];
+  res.send({ currentPlantRanges: data });
 });
 
 app.post("/change_plant", jsonParser, (req, res) => {
