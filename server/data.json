@@ -20,9 +20,9 @@
         "dateTime": 1645713745000
       },
       {
-        "Moisture": 11,
-        "Temperature": 20,
-        "Light": 400,
+        "Moisture": 97,
+        "Temperature": 22.1,
+        "Light": 348,
         "dateTime": 1645713765000
       }
     ],
@@ -83,14 +83,33 @@
         "dateTime": 1645713865000
       },
       {
-        "Moisture": 3,
-        "Temperature": 33.2,
-        "Light": 309,
+        "Moisture": 360,
+        "Temperature": 12,
+        "Light": 790,
         "dateTime": 1645713885000
       }
     ],
     "Marigold": [],
-    "Cranberry": []
+    "Cranberry": [
+      {
+        "Moisture": 0,
+        "Temperature": 27.2,
+        "Light": 309,
+        "dateTime": 1645713845000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 32.8,
+        "Light": 295,
+        "dateTime": 1645713865000
+      },
+      {
+        "Moisture": 61,
+        "Temperature": 26,
+        "Light": 270,
+        "dateTime": 1645713885000
+      }
+    ]
   },
-  "CurrentPlant": "Lobelia"
+  "CurrentPlant": "Cranberry"
 }

@@ -46,7 +46,28 @@ export default class Track extends Component {
     this.fetchServerRanges()
       .then((res) => {
         this.setState({ plantRanges: res });
-        this.setPlantScores();
+        let tS = this.calculatePlantScore(
+          res.Temperature.Max,
+          res.Temperature.Min,
+          this.state.plantData[this.state.plantData.length - 1].Temperature
+        );
+        let mS = this.calculatePlantScore(
+          res.Moisture.Max,
+          res.Moisture.Min,
+          this.state.plantData[this.state.plantData.length - 1].Moisture
+        );
+        let lS = this.calculatePlantScore(
+          res.Light.Max,
+          res.Light.Min,
+          this.state.plantData[this.state.plantData.length - 1].Light
+        );
+        this.setStateInterval = window.setInterval(() => {
+          this.setState({
+            tempScore: tS < 0 ? 0 : tS,
+            moistScore: mS < 0 ? 0 : mS,
+            lightScore: lS < 0 ? 0 : lS,
+          });
+        }, 1000);
       })
       .catch((err) => console.log(err));
   }
@@ -74,43 +95,18 @@ export default class Track extends Component {
       { x: 2, y: 10 - score },
     ];
   };
-  setPlantScores = () => {
-    let ranges = this.state.plantRanges;
-    let latestData = this.state.plantData[this.state.plantData.length - 1];
-    let tempMidpoint = (ranges.Temperature.Max + ranges.Temperature.Min) / 2;
-    let moistMidpoint = (ranges.Moisture.Max + ranges.Moisture.Min) / 2;
-    let lightMidpoint = (ranges.Light.Max + ranges.Light.Min) / 2;
-    let tempScore =
-      -(tempMidpoint ** 2 / 64) +
-      (tempMidpoint * latestData.Temperature) / 32 -
-      latestData.Temperature ** 2 / 64 +
-      10;
-    let moistScore =
-      -(moistMidpoint ** 2 / 64) +
-      (moistMidpoint * latestData.Moisture) / 32 -
-      latestData.Moisture ** 2 / 64 +
-      10;
-    let lightScore =
-      -(lightMidpoint ** 2 / 64) +
-      (lightMidpoint * latestData.Light) / 32 -
-      latestData.Light ** 2 / 64 +
-      10;
-    if (tempScore < 0) {
-      tempScore = 0;
-    } else tempScore = Math.round(tempScore * 10) / 10;
-    if (lightScore < 0) {
-      lightScore = 0;
-    } else lightScore = Math.round(lightScore * 10) / 10;
-    if (moistScore < 0) {
-      moistScore = 0;
-    } else moistScore = Math.round(moistScore * 10) / 10;
-    this.setStateInterval = window.setInterval(() => {
-      this.setState({
-        tempScore: tempScore,
-        moistScore: moistScore,
-        lightScore: lightScore,
-      });
-    }, 1000);
+  calculatePlantScore = (min, max, reading) => {
+    let mid = (max + min) / 2;
+    let score =
+      8 +
+      (-2 * reading ** 2 + 2 * min ** 2) /
+        (-(mid ** 2) - min * max + min * mid + max * mid) +
+      (-2 * (min * reading) -
+        2 * (max * reading) +
+        2 * min ** 2 +
+        2 * (min * max)) /
+        (mid ** 2 + min * max - min * mid - max * mid);
+    return score;
   };
   render() {
     return (
