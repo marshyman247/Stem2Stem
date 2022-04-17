@@ -1,12 +1,19 @@
 import React, { Component } from "react";
-import "./Water.css";
 import axios from "axios";
+import { Button } from "@material-ui/core";
 
 export default class Water extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      disabled: false,
+    };
+  }
   componentDidMount() {
     window.scrollTo(0, 0);
   }
   handleClick = () => {
+    if (this.state.disabled) return;
     let command = JSON.stringify({ Command: "Water" });
     axios
       .post("http://localhost:8000/water_plant", command, {
@@ -22,6 +29,13 @@ export default class Water extends Component {
       .catch((err) => {
         console.error(err);
       });
+    this.setState({ disabled: true });
+    setTimeout(
+      function () {
+        this.setState({ disabled: false });
+      }.bind(this),
+      60000
+    );
   };
   render() {
     return (
@@ -30,13 +44,14 @@ export default class Water extends Component {
           <h1 style={{ fontWeight: "lighter" }}>Water Plant</h1>
           <br />
         </div>
-        <button
+        <Button
           className="submitButton"
           type="button"
+          disabled={this.state.disabled}
           onClick={() => this.handleClick()}
         >
-          Submit
-        </button>
+          {this.state.disabled ? "Watering..." : "Submit"}
+        </Button>
       </div>
     );
   }

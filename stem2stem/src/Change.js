@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import "./Change.css";
-import { InputLabel, MenuItem, FormControl, Select } from "@material-ui/core";
+import {
+  InputLabel,
+  MenuItem,
+  FormControl,
+  Select,
+  Button,
+} from "@material-ui/core";
 import axios from "axios";
 
 export default class Change extends Component {
@@ -71,17 +76,17 @@ export default class Change extends Component {
               <MenuItem value={"Cactus"}>Cactus</MenuItem>
               <MenuItem value={"Lily"}>Lily</MenuItem>
               <MenuItem value={"Lobelia"}>Lobelia</MenuItem>
-              <MenuItem value={"Marigold"}>Marigold</MenuItem>
-              <MenuItem value={"Cranberry"}>Cranberry</MenuItem>
+              <MenuItem value={"Hydrangea"}>Hydrangea</MenuItem>
+              <MenuItem value={"Violet"}>Violet</MenuItem>
             </Select>
           </FormControl>
-          <button
+          <Button
             className="submitButton"
             type="button"
             onClick={() => this.handleClick()}
           >
             Submit
-          </button>
+          </Button>
         </div>
       </div>
     );

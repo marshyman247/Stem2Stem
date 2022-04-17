@@ -7,12 +7,10 @@ const path = require("path");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var jsonParser = bodyParser.json();
-
-app.use(cors());
-
 var COMPort;
 let portPath;
 
+app.use(cors());
 SerialPort.list().then(
   (ports) => {
     ports.forEach((port) => {
@@ -28,16 +26,42 @@ SerialPort.list().then(
     console.log("Error Listing Ports: ", err);
   }
 );
-
+fs.readFile(path.join(__dirname, "/data.json"), (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  let json = JSON.parse(data);
+  console.log(json);
+  app.locals.json = json;
+  console.log(app.locals.json.CurrentPlant);
+});
+fs.readFile(path.join(__dirname, "/PlantHealthRanges.json"), (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  let PlantHealthRanges = JSON.parse(data);
+  app.locals.PlantHealthRanges = PlantHealthRanges;
+  console.log(app.locals.PlantHealthRanges);
+});
+app.listen(appPort, () => console.log(`Listening on port ${appPort}`));
+//FUNCTIONS
 function portOpen() {
   console.log("Serial Port Opened");
 }
 
 function readData(data) {
+  console.log(data);
   str = data.toString(); //Convert to string
   str = str.replace(/(\r\n|\n|\r)/gm, ""); //remove '\r' from this String
-  str = JSON.parse(str); //Then parse it
+  try {
+    str = JSON.parse(str);
+  } catch (e) {
+    return;
+  } //Then parse it
   console.log("Incoming Data: ", str);
+  if (str.Command) return;
   if (str.M != undefined && str.L != undefined && str.T != undefined) {
     let data = {};
     data.Moisture = str.M;
@@ -46,7 +70,12 @@ function readData(data) {
     let date = new Date();
     data.dateTime = Date.parse(date);
     console.log("Outgoing Data: ", data);
-    //app.locals.json.Plants[app.locals.json.CurrentPlant].push(data);
+    app.locals.json.Plants[app.locals.json.CurrentPlant].push(data);
+    app.locals.json.Plants[app.locals.json.CurrentPlant].splice(
+      0,
+      app.locals.json.Plants[app.locals.json.CurrentPlant].length - 60
+    );
+
     fs.writeFile(
       path.join(__dirname, "/data.json"),
       JSON.stringify(app.locals.json, null, 2),
@@ -79,7 +108,6 @@ function createPort(path) {
 }
 function writeToPort(command) {
   if (COMPort) {
-    console.log("Command: ", command);
     COMPort.write(command, function (err) {
       if (err) {
         return console.log("Error on write: ", err.message);
@@ -88,28 +116,7 @@ function writeToPort(command) {
   }
 }
 
-fs.readFile(path.join(__dirname, "/data.json"), (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  let json = JSON.parse(data);
-  console.log(json);
-  app.locals.json = json;
-  console.log(app.locals.json.CurrentPlant);
-});
-fs.readFile(path.join(__dirname, "/PlantHealthRanges.json"), (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  let PlantHealthRanges = JSON.parse(data);
-  app.locals.PlantHealthRanges = PlantHealthRanges;
-  console.log(app.locals.PlantHealthRanges);
-});
-
-app.listen(appPort, () => console.log(`Listening on port ${appPort}`));
-
+//GET REQUESTS
 app.get("/express_backend", (req, res) => {
   res.send({ express: "CONNECTED TO  STEM2STEM SERVER" });
 });
@@ -130,7 +137,7 @@ app.get("/current_plant_ranges", (req, res) => {
   let data = app.locals.PlantHealthRanges.Plants[app.locals.json.CurrentPlant];
   res.send({ currentPlantRanges: data });
 });
-
+//POST REQUESTS
 app.post("/change_plant", jsonParser, (req, res) => {
   console.log(req.body);
   app.locals.json.CurrentPlant = req.body.plant;
@@ -149,7 +156,7 @@ app.post("/water_plant", jsonParser, (req, res) => {
   console.log(req.body);
   if (req.body.Command === "Water") {
     let command = req.body;
-    command.minMoisture =
+    command.minM =
       app.locals.PlantHealthRanges.Plants[
         app.locals.json.CurrentPlant
       ].Moisture.Min;

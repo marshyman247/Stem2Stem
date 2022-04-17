@@ -47,3 +47,18 @@ a:active {
 .PageText h2 {
   font-size: 20px;
 }
+.submitButton {
+  width: 200px;
+  display: inline-flex !important;
+  margin: 24px auto !important;
+  height: 24px;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  background-color: #56c3e6 !important;
+  border: 1px solid black !important;
+  border-radius: 40px !important;
+  text-align: center !important;
+}
+.submitButton:hover {
+  background-color: #37a0c4 !important;
+}

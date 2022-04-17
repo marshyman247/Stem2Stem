@@ -9,6 +9,7 @@ import {
   VictoryPie,
   VictoryLabel,
   VictoryAnimation,
+  VictoryTooltip,
 } from "victory";
 
 import { fadeInUp } from "react-animations";
@@ -160,10 +161,10 @@ export default class Track extends Component {
             </svg>
             <FadeInDiv className="TempChartContainer">
               <VictoryChart
-                height={250}
                 width={500}
                 fontWeight={1}
                 scale={{ x: "time" }}
+                padding={{ bottom: 60, top: 10, left: 60, right: 25 }}
               >
                 <VictoryGroup
                   data={this.state.plantData}
@@ -178,25 +179,86 @@ export default class Track extends Component {
                       parent: { border: "4px solid #ccc" },
                     }}
                   />
-                  <VictoryScatter x="dateTime" y="Temperature" size={2} />
-                  <VictoryAxis
-                    label="Date"
-                    tickValues={this.state.plantData.map(
-                      (d) => new Date(d.dateTime)
-                    )}
-                    tickFormat={(t) =>
-                      `${t.getUTCDate()}/${
-                        t.getUTCMonth() + 1
-                      }/${t.getFullYear()}\n${t.getHours()}:${t.getMinutes()}`
+                  <VictoryScatter
+                    x="dateTime"
+                    y="Temperature"
+                    size={4}
+                    style={{
+                      labels: {
+                        fill: "black",
+                        fontWeight: "lighter",
+                        width: 200,
+                      },
+                    }}
+                    labels={({ datum }) => {
+                      let date = new Date(datum.dateTime);
+                      return `Date: ${date.getUTCDate()}/${
+                        date.getUTCMonth() + 1
+                      }/${date.getFullYear()} - ${date.getHours()}:${String(
+                        date.getMinutes()
+                      ).padStart(2, "0")}\nValue: ${datum.Temperature}°C`;
+                    }}
+                    labelComponent={
+                      <VictoryTooltip
+                        cornerRadius={(datum) => {
+                          let index = datum.index;
+                          let length = datum.data.length;
+                          console.log(index, length);
+                          console.log(datum);
+                          this.direction =
+                            datum.index > datum.data.length / 2
+                              ? { x: -110 }
+                              : { x: 110 };
+                          this.orientation =
+                            datum.index > datum.data.length / 2
+                              ? "right"
+                              : "left";
+                          return 0;
+                        }}
+                        pointerWidth={20}
+                        centerOffset={this.direction}
+                        pointerOrientation={this.orientation}
+                        flyoutWidth={190}
+                        flyoutStyle={{
+                          fill: "#37a0c4",
+                        }}
+                      />
                     }
-                    tickCount={3}
-                  />
-                  <VictoryAxis
-                    dependentAxis
-                    label="Temperature (°C)"
-                    axisLabelComponent={<VictoryLabel dy={-10} />}
                   />
                 </VictoryGroup>
+                <VictoryAxis
+                  label="Date"
+                  tickValues={this.state.plantData.map(
+                    (d) => new Date(d.dateTime)
+                  )}
+                  tickFormat={(t) =>
+                    `${t.getUTCDate()}/${
+                      t.getUTCMonth() + 1
+                    }/${t.getFullYear()}\n${t.getHours()}:${String(
+                      t.getMinutes()
+                    ).padStart(2, "0")}`
+                  }
+                  tickCount={3}
+                  axisLabelComponent={<VictoryLabel dy={20} />}
+                  tickLabelComponent={<VictoryLabel style={{ fontSize: 10 }} />}
+                  style={{
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                />
+                <VictoryAxis
+                  dependentAxis
+                  label="Temperature (°C)"
+                  axisLabelComponent={<VictoryLabel dy={-20} />}
+                  style={{
+                    grid: {
+                      stroke: "grey",
+                      opacity: "25%",
+                    },
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                  tickFormat={(t) => Math.trunc(t)}
+                  tickCount={4}
+                />
               </VictoryChart>
             </FadeInDiv>
           </div>
@@ -241,10 +303,10 @@ export default class Track extends Component {
             </svg>
             <FadeInDiv className="MoistChartContainer">
               <VictoryChart
-                height={250}
                 width={500}
                 fontWeight={1}
                 scale={{ x: "time" }}
+                padding={{ bottom: 60, top: 10, left: 60, right: 25 }}
               >
                 <VictoryGroup
                   data={this.state.plantData}
@@ -259,25 +321,85 @@ export default class Track extends Component {
                       parent: { border: "4px solid #ccc" },
                     }}
                   />
-                  <VictoryScatter x="dateTime" y="Moisture" size={2} />
-                  <VictoryAxis
-                    label="Date"
-                    tickValues={this.state.plantData.map(
-                      (d) => new Date(d.dateTime)
-                    )}
-                    tickFormat={(t) =>
-                      `${t.getUTCDate()}/${
-                        t.getUTCMonth() + 1
-                      }/${t.getFullYear()}\n${t.getHours()}:${t.getMinutes()}`
+                  <VictoryScatter
+                    x="dateTime"
+                    y="Moisture"
+                    size={4}
+                    style={{
+                      labels: {
+                        fill: "black",
+                        fontWeight: "lighter",
+                        width: 200,
+                      },
+                    }}
+                    labels={({ datum }) => {
+                      let date = new Date(datum.dateTime);
+                      return `Date: ${date.getUTCDate()}/${
+                        date.getUTCMonth() + 1
+                      }/${date.getFullYear()} - ${date.getHours()}:${String(
+                        date.getMinutes()
+                      ).padStart(2, "0")}\nValue: ${datum.Moisture}%`;
+                    }}
+                    labelComponent={
+                      <VictoryTooltip
+                        cornerRadius={(datum) => {
+                          let index = datum.index;
+                          let length = datum.data.length;
+                          console.log(index, length);
+                          console.log(datum);
+                          this.direction =
+                            datum.index > datum.data.length / 2
+                              ? { x: -110 }
+                              : { x: 110 };
+                          this.orientation =
+                            datum.index > datum.data.length / 2
+                              ? "right"
+                              : "left";
+                          return 0;
+                        }}
+                        pointerWidth={20}
+                        centerOffset={this.direction}
+                        pointerOrientation={this.orientation}
+                        flyoutWidth={190}
+                        flyoutStyle={{
+                          fill: "#37a0c4",
+                        }}
+                      />
                     }
-                    tickCount={3}
-                  />
-                  <VictoryAxis
-                    dependentAxis
-                    label="Moisture"
-                    axisLabelComponent={<VictoryLabel dy={-10} />}
                   />
                 </VictoryGroup>
+                <VictoryAxis
+                  label="Date"
+                  tickValues={this.state.plantData.map(
+                    (d) => new Date(d.dateTime)
+                  )}
+                  tickFormat={(t) =>
+                    `${t.getUTCDate()}/${
+                      t.getUTCMonth() + 1
+                    }/${t.getFullYear()}\n${t.getHours()}:${String(
+                      t.getMinutes()
+                    ).padStart(2, "0")}`
+                  }
+                  tickCount={3}
+                  axisLabelComponent={<VictoryLabel dy={20} />}
+                  tickLabelComponent={<VictoryLabel style={{ fontSize: 10 }} />}
+                  style={{
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                />
+                <VictoryAxis
+                  dependentAxis
+                  label="Moisture (%)"
+                  axisLabelComponent={<VictoryLabel dy={-20} />}
+                  style={{
+                    grid: {
+                      stroke: "grey",
+                      opacity: "25%",
+                    },
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                  tickFormat={(t) => Math.trunc(t)}
+                />
               </VictoryChart>
             </FadeInDiv>
           </div>
@@ -322,10 +444,10 @@ export default class Track extends Component {
             </svg>
             <FadeInDiv className="LightChartContainer">
               <VictoryChart
-                height={250}
                 width={500}
                 fontWeight={1}
                 scale={{ x: "time" }}
+                padding={{ bottom: 60, top: 10, left: 60, right: 25 }}
               >
                 <VictoryGroup
                   data={this.state.plantData}
@@ -340,25 +462,85 @@ export default class Track extends Component {
                       parent: { border: "4px solid #ccc" },
                     }}
                   />
-                  <VictoryScatter x="dateTime" y="Light" size={2} />
-                  <VictoryAxis
-                    label="Date"
-                    tickValues={this.state.plantData.map(
-                      (d) => new Date(d.dateTime)
-                    )}
-                    tickFormat={(t) =>
-                      `${t.getUTCDate()}/${
-                        t.getUTCMonth() + 1
-                      }/${t.getFullYear()}\n${t.getHours()}:${t.getMinutes()}`
+                  <VictoryScatter
+                    x="dateTime"
+                    y="Light"
+                    size={4}
+                    style={{
+                      labels: {
+                        fill: "black",
+                        fontWeight: "lighter",
+                        width: 200,
+                      },
+                    }}
+                    labels={({ datum }) => {
+                      let date = new Date(datum.dateTime);
+                      return `Date: ${date.getUTCDate()}/${
+                        date.getUTCMonth() + 1
+                      }/${date.getFullYear()} - ${date.getHours()}:${String(
+                        date.getMinutes()
+                      ).padStart(2, "0")}\nValue: ${datum.Light}`;
+                    }}
+                    labelComponent={
+                      <VictoryTooltip
+                        cornerRadius={(datum) => {
+                          let index = datum.index;
+                          let length = datum.data.length;
+                          console.log(index, length);
+                          console.log(datum);
+                          this.direction =
+                            datum.index > datum.data.length / 2
+                              ? { x: -110 }
+                              : { x: 110 };
+                          this.orientation =
+                            datum.index > datum.data.length / 2
+                              ? "right"
+                              : "left";
+                          return 0;
+                        }}
+                        pointerWidth={20}
+                        centerOffset={this.direction}
+                        pointerOrientation={this.orientation}
+                        flyoutWidth={200}
+                        flyoutStyle={{
+                          fill: "#37a0c4",
+                        }}
+                      />
                     }
-                    tickCount={3}
-                  />
-                  <VictoryAxis
-                    dependentAxis
-                    label="Light"
-                    axisLabelComponent={<VictoryLabel dy={-10} />}
                   />
                 </VictoryGroup>
+                <VictoryAxis
+                  label="Date"
+                  tickValues={this.state.plantData.map(
+                    (d) => new Date(d.dateTime)
+                  )}
+                  tickFormat={(t) =>
+                    `${t.getUTCDate()}/${
+                      t.getUTCMonth() + 1
+                    }/${t.getFullYear()}\n${t.getHours()}:${String(
+                      t.getMinutes()
+                    ).padStart(2, "0")}`
+                  }
+                  tickCount={3}
+                  axisLabelComponent={<VictoryLabel dy={20} />}
+                  tickLabelComponent={<VictoryLabel style={{ fontSize: 10 }} />}
+                  style={{
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                />
+                <VictoryAxis
+                  dependentAxis
+                  label="Light"
+                  axisLabelComponent={<VictoryLabel dy={-20} />}
+                  style={{
+                    grid: {
+                      stroke: "grey",
+                      opacity: "25%",
+                    },
+                    ticks: { stroke: "grey", size: 5 },
+                  }}
+                  tickFormat={(t) => Math.trunc(t)}
+                />
               </VictoryChart>
             </FadeInDiv>
           </div>
