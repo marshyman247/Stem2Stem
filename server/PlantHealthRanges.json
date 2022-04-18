@@ -1,0 +1,29 @@
+{
+  "Plants": {
+    "Cactus": {
+      "Moisture": { "Min": 0, "Max": 40 },
+      "Light": { "Min": 400, "Max": 1023 },
+      "Temperature": { "Min": 7, "Max": 29 }
+    },
+    "Lily": {
+      "Moisture": { "Min": 21, "Max": 60 },
+      "Light": { "Min": 400, "Max": 700 },
+      "Temperature": { "Min": 15, "Max": 23 }
+    },
+    "Lobelia": {
+      "Moisture": { "Min": 41, "Max": 80 },
+      "Light": { "Min": 240, "Max": 1023 },
+      "Temperature": { "Min": 18, "Max": 26 }
+    },
+    "Hydrangea": {
+      "Moisture": { "Min": 41, "Max": 60 },
+      "Light": { "Min": 400, "Max": 700 },
+      "Temperature": { "Min": 10, "Max": 16 }
+    },
+    "Violet": {
+      "Moisture": { "Min": 21, "Max": 60 },
+      "Light": { "Min": 400, "Max": 700 },
+      "Temperature": { "Min": 18, "Max": 26 }
+    }
+  }
+}

@@ -1,0 +1,873 @@
+{
+  "Plants": {
+    "Cactus": [
+      {
+        "Moisture": 30,
+        "Temperature": 10.9,
+        "Light": 207,
+        "dateTime": 1646830860000
+      },
+      {
+        "Moisture": 30,
+        "Temperature": 37.1,
+        "Light": 190,
+        "dateTime": 1646831345000
+      },
+      {
+        "Moisture": 29,
+        "Temperature": 37.7,
+        "Light": 195,
+        "dateTime": 1646831465000
+      },
+      {
+        "Moisture": 28,
+        "Temperature": 37.7,
+        "Light": 178,
+        "dateTime": 1646831585000
+      },
+      {
+        "Moisture": 19,
+        "Temperature": 35.9,
+        "Light": 174,
+        "dateTime": 1646831705000
+      },
+      {
+        "Moisture": 19,
+        "Temperature": 36.2,
+        "Light": 183,
+        "dateTime": 1646831825000
+      },
+      {
+        "Moisture": 16,
+        "Temperature": 35,
+        "Light": 205,
+        "dateTime": 1646831945000
+      },
+      {
+        "Moisture": 17,
+        "Temperature": 35.9,
+        "Light": 191,
+        "dateTime": 1646832065000
+      },
+      {
+        "Moisture": 19,
+        "Temperature": 37.7,
+        "Light": 192,
+        "dateTime": 1646832185000
+      },
+      {
+        "Moisture": 17,
+        "Temperature": 36.5,
+        "Light": 200,
+        "dateTime": 1646832305000
+      },
+      {
+        "Moisture": 16,
+        "Temperature": 16,
+        "Light": 170,
+        "dateTime": 1646832481000
+      },
+      {
+        "Moisture": 15,
+        "Temperature": 13.6,
+        "Light": 200,
+        "dateTime": 1646832601000
+      },
+      {
+        "Moisture": 11,
+        "Temperature": 15.4,
+        "Light": 193,
+        "dateTime": 1646832721000
+      },
+      {
+        "Moisture": 9,
+        "Temperature": 9.4,
+        "Light": 189,
+        "dateTime": 1646832841000
+      },
+      {
+        "Moisture": 8,
+        "Temperature": 14.8,
+        "Light": 182,
+        "dateTime": 1646832961000
+      },
+      {
+        "Moisture": 23,
+        "Temperature": 35.3,
+        "Light": 195,
+        "dateTime": 1646833155000
+      },
+      {
+        "Moisture": 25,
+        "Temperature": 39.5,
+        "Light": 197,
+        "dateTime": 1646833275000
+      },
+      {
+        "Moisture": 26,
+        "Temperature": 36.8,
+        "Light": 201,
+        "dateTime": 1646833395000
+      },
+      {
+        "Moisture": 26,
+        "Temperature": 38.9,
+        "Light": 194,
+        "dateTime": 1646833515000
+      },
+      {
+        "Moisture": 28,
+        "Temperature": 37.1,
+        "Light": 200,
+        "dateTime": 1646833635000
+      },
+      {
+        "Moisture": 33,
+        "Temperature": 35.3,
+        "Light": 175,
+        "dateTime": 1646833755000
+      },
+      {
+        "Moisture": 33,
+        "Temperature": 38,
+        "Light": 179,
+        "dateTime": 1646833875000
+      },
+      {
+        "Moisture": 30,
+        "Temperature": 40.4,
+        "Light": 166,
+        "dateTime": 1646833995000
+      },
+      {
+        "Moisture": 27,
+        "Temperature": 37.4,
+        "Light": 179,
+        "dateTime": 1646834115000
+      },
+      {
+        "Moisture": 22,
+        "Temperature": 36.5,
+        "Light": 174,
+        "dateTime": 1646834235000
+      },
+      {
+        "Moisture": 26,
+        "Temperature": 39.5,
+        "Light": 193,
+        "dateTime": 1646834355000
+      },
+      {
+        "Moisture": 28,
+        "Temperature": 37.4,
+        "Light": 179,
+        "dateTime": 1646834475000
+      },
+      {
+        "Moisture": 31,
+        "Temperature": 34.4,
+        "Light": 190,
+        "dateTime": 1646834595000
+      },
+      {
+        "Moisture": 30,
+        "Temperature": 37.4,
+        "Light": 201,
+        "dateTime": 1646834715000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 10.9,
+        "Light": 221,
+        "dateTime": 1646836778000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 8.2,
+        "Light": 214,
+        "dateTime": 1646836901000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 13,
+        "Light": 201,
+        "dateTime": 1646837024000
+      },
+      {
+        "Moisture": 64,
+        "Temperature": 8.5,
+        "Light": 151,
+        "dateTime": 1646837148000
+      },
+      {
+        "Moisture": 73,
+        "Temperature": 7.6,
+        "Light": 194,
+        "dateTime": 1646837271000
+      },
+      {
+        "Moisture": 72,
+        "Temperature": 7.6,
+        "Light": 209,
+        "dateTime": 1646837394000
+      },
+      {
+        "Moisture": 72,
+        "Temperature": 7,
+        "Light": 203,
+        "dateTime": 1646837517000
+      },
+      {
+        "Moisture": 61,
+        "Temperature": 7.3,
+        "Light": 203,
+        "dateTime": 1646837641000
+      },
+      {
+        "Moisture": 60,
+        "Temperature": 7,
+        "Light": 186,
+        "dateTime": 1646837764000
+      },
+      {
+        "Moisture": 60,
+        "Temperature": 6.7,
+        "Light": 216,
+        "dateTime": 1646837887000
+      },
+      {
+        "Moisture": 59,
+        "Temperature": 6.7,
+        "Light": 198,
+        "dateTime": 1646838010000
+      },
+      {
+        "Moisture": 56,
+        "Temperature": 7.6,
+        "Light": 156,
+        "dateTime": 1646838134000
+      },
+      {
+        "Moisture": 52,
+        "Temperature": 7.3,
+        "Light": 149,
+        "dateTime": 1646838257000
+      },
+      {
+        "Moisture": 49,
+        "Temperature": 7,
+        "Light": 177,
+        "dateTime": 1646838380000
+      },
+      {
+        "Moisture": 43,
+        "Temperature": 7,
+        "Light": 210,
+        "dateTime": 1646838504000
+      }
+    ],
+    "Lily": [
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 283,
+        "dateTime": 1649852656000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 278,
+        "dateTime": 1649852708000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 335,
+        "dateTime": 1649852739000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 341,
+        "dateTime": 1649852770000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 311,
+        "dateTime": 1649852801000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 323,
+        "dateTime": 1649852832000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 25,
+        "Light": 336,
+        "dateTime": 1649852863000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 850,
+        "dateTime": 1649859609000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 851,
+        "dateTime": 1649859640000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 832,
+        "dateTime": 1649859671000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 326,
+        "dateTime": 1649940120000
+      }
+    ],
+    "Lobelia": [
+      {
+        "Moisture": 2,
+        "Temperature": 20,
+        "Light": 286,
+        "dateTime": 1645713705000
+      },
+      {
+        "Moisture": 5,
+        "Temperature": 21.6,
+        "Light": 280,
+        "dateTime": 1645713725000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 33.2,
+        "Light": 287,
+        "dateTime": 1645713745000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 17.6,
+        "Light": 300,
+        "dateTime": 1645713765000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 22.8,
+        "Light": 277,
+        "dateTime": 1645713785000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 16.4,
+        "Light": 288,
+        "dateTime": 1645713805000
+      },
+      {
+        "Moisture": 3,
+        "Temperature": 18,
+        "Light": 295,
+        "dateTime": 1645713825000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 27.2,
+        "Light": 309,
+        "dateTime": 1645713845000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 32.8,
+        "Light": 295,
+        "dateTime": 1645713865000
+      },
+      {
+        "Moisture": 35,
+        "Temperature": 12,
+        "Light": 790,
+        "dateTime": 1645713885000
+      }
+    ],
+    "Hydrangea": [
+      {
+        "Moisture": 0,
+        "Temperature": 32,
+        "Light": 883,
+        "dateTime": 1649941286000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 878,
+        "dateTime": 1649941317000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 877,
+        "dateTime": 1649941348000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 876,
+        "dateTime": 1649941379000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 866,
+        "dateTime": 1649941410000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 863,
+        "dateTime": 1649941441000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 860,
+        "dateTime": 1649941472000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 891,
+        "dateTime": 1649941529000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 878,
+        "dateTime": 1649941560000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 851,
+        "dateTime": 1649941591000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 840,
+        "dateTime": 1649941622000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 824,
+        "dateTime": 1649941653000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 817,
+        "dateTime": 1649941684000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 31,
+        "Light": 811,
+        "dateTime": 1649941715000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 803,
+        "dateTime": 1649941746000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 789,
+        "dateTime": 1649941777000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 782,
+        "dateTime": 1649941807000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 772,
+        "dateTime": 1649941838000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 765,
+        "dateTime": 1649941869000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 761,
+        "dateTime": 1649941900000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 753,
+        "dateTime": 1649941931000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 744,
+        "dateTime": 1649941962000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 737,
+        "dateTime": 1649941993000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 729,
+        "dateTime": 1649942024000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 725,
+        "dateTime": 1649942055000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 717,
+        "dateTime": 1649942086000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 710,
+        "dateTime": 1649942117000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 704,
+        "dateTime": 1649942148000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 699,
+        "dateTime": 1649942179000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 30,
+        "Light": 696,
+        "dateTime": 1649942210000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 701,
+        "dateTime": 1649942540000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 709,
+        "dateTime": 1649942571000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 861,
+        "dateTime": 1649943387000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 867,
+        "dateTime": 1649943418000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 875,
+        "dateTime": 1649943449000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 866,
+        "dateTime": 1649943480000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 866,
+        "dateTime": 1649943511000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 865,
+        "dateTime": 1649943542000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 866,
+        "dateTime": 1649943573000
+      },
+      {
+        "Moisture": 36,
+        "Temperature": 27,
+        "Light": 213,
+        "dateTime": 1649944354000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 28,
+        "Light": 217,
+        "dateTime": 1649944385000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 28,
+        "Light": 221,
+        "dateTime": 1649944416000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 28,
+        "Light": 231,
+        "dateTime": 1649944447000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 28,
+        "Light": 219,
+        "dateTime": 1649944478000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 218,
+        "dateTime": 1649944509000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 215,
+        "dateTime": 1649944540000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 214,
+        "dateTime": 1649944571000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 216,
+        "dateTime": 1649944602000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 216,
+        "dateTime": 1649944633000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 208,
+        "dateTime": 1649944664000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 209,
+        "dateTime": 1649944695000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 212,
+        "dateTime": 1649944726000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 210,
+        "dateTime": 1649944757000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 208,
+        "dateTime": 1649944788000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 206,
+        "dateTime": 1649944819000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 203,
+        "dateTime": 1649944850000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 206,
+        "dateTime": 1649944881000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 204,
+        "dateTime": 1649944912000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 202,
+        "dateTime": 1649944943000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 29,
+        "Light": 203,
+        "dateTime": 1649944974000
+      }
+    ],
+    "Violet": [
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 358,
+        "dateTime": 1649859051000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 358,
+        "dateTime": 1649859082000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 368,
+        "dateTime": 1649859113000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 28,
+        "Light": 340,
+        "dateTime": 1649859144000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 365,
+        "dateTime": 1649859175000
+      },
+      {
+        "Moisture": 24,
+        "Temperature": 26,
+        "Light": 285,
+        "dateTime": 1649859206000
+      },
+      {
+        "Moisture": 23,
+        "Temperature": 26,
+        "Light": 285,
+        "dateTime": 1649859237000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 164,
+        "dateTime": 1649859268000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 369,
+        "dateTime": 1649859299000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 853,
+        "dateTime": 1649859330000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 870,
+        "dateTime": 1649859361000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 876,
+        "dateTime": 1649859392000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 874,
+        "dateTime": 1649859423000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 863,
+        "dateTime": 1649859454000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 855,
+        "dateTime": 1649859485000
+      },
+      {
+        "Moisture": 0,
+        "Temperature": 26,
+        "Light": 868,
+        "dateTime": 1649859516000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 865,
+        "dateTime": 1649859547000
+      },
+      {
+        "Moisture": 1,
+        "Temperature": 26,
+        "Light": 864,
+        "dateTime": 1649859578000
+      }
+    ]
+  },
+  "CurrentPlant": "Hydrangea"
+}

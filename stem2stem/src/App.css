@@ -1,0 +1,64 @@
+.AppBar {
+  width: 100vw;
+  background-color: #88c47c !important;
+  display: flex !important;
+  position: sticky !important;
+}
+.AppBarButton {
+  width: 175px;
+  color: white !important;
+  display: inline-flex !important;
+  height: 60px !important;
+  font-size: 18px !important;
+  font-family: "Century Gothic" !important;
+  font-weight: bold !important;
+}
+
+.AppBarButton:hover {
+  background-color: #4b7c41 !important;
+}
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none !important;
+}
+.PageHeader {
+  /* width: 100vw; */
+  margin-top: 15px;
+}
+
+:root {
+  color: black;
+  background-size: cover;
+  overflow-x: hidden !important;
+  background-color: #c7f9cc;
+}
+.PageText {
+  /* padding: 20px; */
+  text-align: center;
+  font-size: 22px;
+  height: 100vh;
+}
+.PageText h1 {
+  font-size: 40px;
+  margin-bottom: -10px;
+}
+.PageText h2 {
+  font-size: 20px;
+}
+.submitButton {
+  width: 200px;
+  display: inline-flex !important;
+  margin: 24px auto !important;
+  height: 24px;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  background-color: #56c3e6 !important;
+  border: 1px solid black !important;
+  border-radius: 40px !important;
+  text-align: center !important;
+}
+.submitButton:hover {
+  background-color: #37a0c4 !important;
+}
