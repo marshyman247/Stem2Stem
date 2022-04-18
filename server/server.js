@@ -53,13 +53,13 @@ function portOpen() {
 
 function readData(data) {
   console.log(data);
-  str = data.toString(); //Convert to string
-  str = str.replace(/(\r\n|\n|\r)/gm, ""); //remove '\r' from this String
+  str = data.toString();
+  str = str.replace(/(\r\n|\n|\r)/gm, "");
   try {
     str = JSON.parse(str);
   } catch (e) {
     return;
-  } //Then parse it
+  }
   console.log("Incoming Data: ", str);
   if (str.Command) return;
   if (str.M != undefined && str.L != undefined && str.T != undefined) {
