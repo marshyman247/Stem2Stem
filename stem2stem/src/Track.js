@@ -257,7 +257,7 @@ export default class Track extends Component {
                     ticks: { stroke: "grey", size: 5 },
                   }}
                   tickFormat={(t) => Math.trunc(t)}
-                  tickCount={4}
+                  tickCount={2}
                 />
               </VictoryChart>
             </FadeInDiv>

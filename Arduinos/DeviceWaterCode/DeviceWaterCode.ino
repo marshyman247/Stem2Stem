@@ -2,7 +2,7 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 #include <SPI.h>
-#include <DHT.h>;
+#include <DHT.h>
 
 #define DHTPIN 3
 #define DHTTYPE DHT22
@@ -130,7 +130,7 @@ void receive() {
         waterStart = millis();
         waterStop = millis();
         digitalWrite(pumpPin, HIGH);
-        while (waterStop - waterStart < 10000 && wateringMoisture < minMoisture) {
+        while (waterStop - waterStart < 2000 && wateringMoisture < minMoisture) {
           //Power WaterPump
           Serial.println("PUMPING WATER ");
           waterStop = millis();
